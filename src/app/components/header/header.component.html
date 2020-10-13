@@ -1,0 +1,47 @@
+<header >
+    <div class="banner pl-5 pr-5">
+        <div class="row d-flex align-items-center justify-content-between">
+            <div class="col-md-6">
+                <img src="assets/images/logo.png" width="200px">
+            </div>
+            <div class="col-md-6 text-right">
+                <button class="btn btn-light border-0 btn-lg text-danger" (click)="openModal(template)"><i class="fa fa-plus mr-2 font-"></i>ADD MORE</button>
+            </div>
+        </div>
+        <section class="banner_section w-75 m-auto">
+            <h1 class="text-light font-weight-light mb-5">FIND YOUR MOVIE</h1>
+            <div class="input-group">
+                <input type="text" class="form-control p-4" placeholder="What do you want to watch?" aria-describedby="validationTooltipUsernamePrepend" required>
+                <div class="invalid-tooltip">
+                    Please choose a unique and valid username.
+                </div>
+                <div class="input-group-prepend">
+                    <span class="input-group-text pl-5 pr-5 btn-danger rou">SEARCH</span>
+                </div>
+            </div>
+        </section>
+    </div>
+</header>
+
+<ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Add New Movie</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+            <label for="inputEmail4">Movie Name</label>
+            <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+            <label for="inputPassword4">Movie Type</label>
+            <input type="text" class="form-control">
+            </div>
+                       
+            <button type="submit" class="btn btn-primary">Add</button>
+          </form>
+    </div>
+  </ng-template>

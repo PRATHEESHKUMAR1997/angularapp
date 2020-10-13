@@ -1,0 +1,11 @@
+<div class="row movie_list mt-4 mb-4" *ngIf="moviesList" >
+    <div class="col-md-4 pb-4" *ngFor="let list of moviesList">
+       <div class="card">
+           <!-- <img class="card-img-top" src="assets/images/black-panther-web.jpg" alt="Card image cap"> -->
+           <div class="card-body bg-dark">
+             <h5 class="card-title d-flex align-items-center justify-content-between">{{list.userId}}. {{ list.title }} <span class="border float-right pl-3 pr-3 pt-1 pb-1" style="font-size: 14px;">200{{list.userId}}</span></h5>
+             <p class="card-text">Action & Adventure</p>
+           </div>
+         </div>
+    </div>
+</div>

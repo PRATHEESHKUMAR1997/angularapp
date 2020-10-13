@@ -1,0 +1,30 @@
+@use '../../../assets/css/common_style';
+header {
+    background-image:url('../../../assets/images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    .banner {
+        background-color: #00000082;
+        padding: 0 0 10%;
+    
+        button{
+            background-color: #6a6969b0;
+        }
+        .input-group {
+            span {
+                color: common_style.$fontColor;
+                background-color: common_style.$redColor;
+                border-color: common_style.$redColor;
+            }
+            input {
+                background: #0000007a;
+                border: none;
+                color: common_style.$fontColor;;
+            }
+            input::placeholder{
+                color: common_style.$fontColor;;
+            }
+        }
+    }
+}

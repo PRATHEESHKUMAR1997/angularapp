@@ -1,0 +1,5 @@
+<section class="shows_category_section mt-2 bg-dark pl-5 pr-5 pb-5">
+    <app-nav (selectedIndex)="loadTabData($event)" (sortDataCall)="shortData()"></app-nav>
+    <h3 class="mt-5 font-weight-light">{{totalCount}} movies found</h3>
+    <app-movies [moviesList]="filterdData"></app-movies>
+</section>

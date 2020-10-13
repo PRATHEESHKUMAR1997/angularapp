@@ -1,0 +1,27 @@
+<nav>
+    <div class="row align-items-center pt-3 pb-3 border-bottom border-secondary">
+        <div class="col-md-7">
+            <ul class="p-0 m-0">
+                <li *ngFor="let val of menu; let i = index">
+                    <a (click)="tabClick(i)" [class.active]="index === i">{{ val.text }}</a>
+                </li>
+            </ul>
+
+        </div>
+        <div class="col-md-5 text-right">
+            <ul class="p-0 m-0">
+                <li (click)="sortData()">SORT BY</li>
+                <div class="btn-group" dropdown>
+                    <button id="button-basic" dropdownToggle type="button" class="btn text-light dropdown-toggle "
+                        aria-controls="dropdown-basic">
+                        RELEASE DATE <span class="caret"></span>
+                    </button>
+                    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu"
+                        aria-labelledby="button-basic">
+                        <li role="menuitem"><a class="dropdown-item" href="#">01.01.2020</a></li>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+    </div>
+</nav>
