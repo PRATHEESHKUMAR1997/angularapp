@@ -12,6 +12,8 @@ export class MovieListService {
     this.http.get('https://jsonplaceholder.typicode.com/todos').subscribe(Response => {
         this.moviesData = Response;
         return this.moviesData;
+        console.log(this.moviesData);
+        
     });
   }
 }
