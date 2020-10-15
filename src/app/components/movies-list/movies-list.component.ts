@@ -12,9 +12,10 @@ export class MoviesListComponent implements OnInit {
   constructor(private movieDataService: MovieListService) { }
 
   ngOnInit(): void {
-    this.moviesListData = this.movieDataService.getMoviesList();
-    console.log(this.moviesListData + 'movieList');
-    this.loadTabData('');
+    this.movieDataService.getMoviesList().subscribe(Response => {
+      this.moviesListData = Response;
+      this.loadTabData('');
+    });
   }
 
   loadTabData(e) {

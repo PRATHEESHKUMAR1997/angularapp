@@ -5,15 +5,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MovieListService {
-  moviesData: any;
   constructor(private http: HttpClient) { }
 
   getMoviesList() {
-    this.http.get('https://jsonplaceholder.typicode.com/todos').subscribe(Response => {
-        this.moviesData = Response;
-        return this.moviesData;
-        console.log(this.moviesData);
-        
-    });
+   return this.http.get('https://jsonplaceholder.typicode.com/todos');
   }
 }
