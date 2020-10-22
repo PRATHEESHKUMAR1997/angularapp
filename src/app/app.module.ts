@@ -11,8 +11,10 @@ import { MoviesListComponent } from './components/movies-list/movies-list.compon
 import { NavComponent } from './components/movies-list/nav/nav.component';
 import { MoviesComponent } from './components/movies-list/movies/movies.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MovieListService } from './services/movie-list.service';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,9 @@ import { MovieListService } from './services/movie-list.service';
     BrowserAnimationsModule,
     HttpClientModule,
     Ng2SearchPipeModule,
-    ModalModule.forRoot()
+    FormsModule,
+    ModalModule.forRoot(),
+    BsDropdownModule.forRoot()
   ],
   providers: [MovieListService],
   bootstrap: [AppComponent]

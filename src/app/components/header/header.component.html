@@ -11,12 +11,12 @@
         <section class="banner_section w-75 m-auto">
             <h1 class="text-light font-weight-light mb-5">FIND YOUR MOVIE</h1>
             <div class="input-group">
-                <input type="text" class="form-control p-4" placeholder="What do you want to watch?" aria-describedby="validationTooltipUsernamePrepend" required>
+                <input type="text" class="form-control p-4" placeholder="What do you want to watch?" [(ngModel)]="searchValue" required>
                 <div class="invalid-tooltip">
                     Please choose a unique and valid username.
                 </div>
                 <div class="input-group-prepend">
-                    <span class="input-group-text pl-5 pr-5 btn-danger rou">SEARCH</span>
+                    <span class="input-group-text pl-5 pr-5 btn-danger rou" (click)="searchMovie()">SEARCH</span>
                 </div>
             </div>
         </section>

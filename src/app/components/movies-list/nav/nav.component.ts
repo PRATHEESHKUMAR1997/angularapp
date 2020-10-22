@@ -23,7 +23,7 @@ export class NavComponent implements OnInit {
     this.selectedIndex.emit(index);
     this.index = index;
   }
-  sortData(){
-    this.sortDataCall.emit();
+  sortData(sortBy){
+    this.sortDataCall.emit({sortBy});
   }
 }

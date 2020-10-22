@@ -1,6 +1,6 @@
 <div class="home_parent bg-secondary text-light">
-    <app-header></app-header>
-    <app-movies-list></app-movies-list>
+    <app-header (searchBox)="passSearchValue($event)"></app-header>
+    <app-movies-list [passedSearchValue]="searchInputValue"></app-movies-list>
     <app-footer></app-footer>
     
 </div>

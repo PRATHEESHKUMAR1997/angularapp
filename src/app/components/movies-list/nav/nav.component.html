@@ -10,17 +10,21 @@
         </div>
         <div class="col-md-5 text-right">
             <ul class="p-0 m-0">
-                <li (click)="sortData()">SORT BY</li>
+                <li>SORT BY</li>
                 <div class="btn-group" dropdown>
-                    <button id="button-basic" dropdownToggle type="button" class="btn text-light dropdown-toggle "
-                        aria-controls="dropdown-basic">
-                        RELEASE DATE <span class="caret"></span>
+                    <button id="button-basic" dropdownToggle type="button" class="btn text-light dropdown-toggle p-0"
+                            aria-controls="dropdown-basic">
+                      Select Type<span class="caret"></span>
                     </button>
-                    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu"
-                        aria-labelledby="button-basic">
-                        <li role="menuitem"><a class="dropdown-item" href="#">01.01.2020</a></li>
+                    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu text-dark dropdown-menu-left"
+                        role="menu" aria-labelledby="button-basic">
+                      <li role="menuitem"><a class="dropdown-item" (click)="sortData(1)">Name by Ascending</a></li>
+                      <li role="menuitem"><a class="dropdown-item" (click)="sortData(2)">Name by Descending</a></li>
+                      <li role="menuitem"><a class="dropdown-item" (click)="sortData(3)">ID by Ascending</a></li>
+                      <li role="menuitem"><a class="dropdown-item" (click)="sortData(4)">ID by Descending</a></li>
+                      
                     </ul>
-                </div>
+                  </div>
             </ul>
         </div>
     </div>

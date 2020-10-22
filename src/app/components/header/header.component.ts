@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
@@ -7,12 +7,17 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  @Output() searchBox: EventEmitter<any> = new EventEmitter<any> ();
   modalRef: BsModalRef;
-  constructor(private modalService: BsModalService) { }
+  searchValue;
+  constructor(private modalService: BsModalService ) { }
 
   ngOnInit(): void {
   }
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
+  }
+  searchMovie() {
+    this.searchBox.emit(this.searchValue);
   }
 }
