@@ -10,4 +10,8 @@ export class MovieListService {
   getMoviesList() {
    return this.http.get('https://jsonplaceholder.typicode.com/todos');
   }
+
+  setMoviesList(data) {
+   return this.http.post('https://jsonplaceholder.typicode.com/posts', data);
+  }
 }

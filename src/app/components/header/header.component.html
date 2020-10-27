@@ -31,17 +31,15 @@
       </button>
     </div>
     <div class="modal-body">
-        <form>
             <div class="form-group">
             <label for="inputEmail4">Movie Name</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" [(ngModel)]="newReCord.title">
             </div>
             <div class="form-group">
             <label for="inputPassword4">Movie Type</label>
-            <input type="text" class="form-control">
+            <input type="number" class="form-control" [(ngModel)]="newReCord.userId">
             </div>
                        
-            <button type="submit" class="btn btn-primary">Add</button>
-          </form>
+            <button class="btn btn-primary" (click)="addNewMovie()">Add</button>
     </div>
   </ng-template>

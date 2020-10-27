@@ -15,6 +15,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MovieListService } from './services/movie-list.service';
 import { FormsModule } from '@angular/forms';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { FormsModule } from '@angular/forms';
     Ng2SearchPipeModule,
     FormsModule,
     ModalModule.forRoot(),
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    MatAutocompleteModule
   ],
   providers: [MovieListService],
   bootstrap: [AppComponent]

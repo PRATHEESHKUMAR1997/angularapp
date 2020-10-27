@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { MovieListService } from 'src/app/services/movie-list.service';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +10,14 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 export class HeaderComponent implements OnInit {
   @Output() searchBox: EventEmitter<any> = new EventEmitter<any> ();
   modalRef: BsModalRef;
-  searchValue;
-  constructor(private modalService: BsModalService ) { }
+  searchValue:any;
+  newReCord: any={
+    userId: null,
+    id: null,
+    title: null,
+    completed: true
+  }
+  constructor(private modalService: BsModalService ,private movieDataService: MovieListService) { }
 
   ngOnInit(): void {
   }
@@ -19,5 +26,13 @@ export class HeaderComponent implements OnInit {
   }
   searchMovie() {
     this.searchBox.emit(this.searchValue);
+  }
+  addNewMovie(){
+    this.newReCord = {userId:this.newReCord.userId, id:201, title:this.newReCord.title, complated: this.newReCord.completed};
+    //let convertString = JSON.stringify(this.newReCord);
+    this.movieDataService.setMoviesList(this.newReCord).subscribe(response => {
+      console.log(response);
+      
+    });;
   }
 }
